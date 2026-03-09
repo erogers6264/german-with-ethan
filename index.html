@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethan Rogers | German Lessons in Berlin</title>
+  <meta name="description" content="German lessons in Berlin and online with Ethan Rogers — experienced teacher, linguist, and German studies specialist offering private and small-group lessons." />
+  <style>
+    :root {
+      --bg: #f3efe8;
+      --paper: rgba(255, 252, 247, 0.88);
+      --paper-strong: #fffdf9;
+      --ink: #181512;
+      --muted: #655d55;
+      --line: rgba(125, 102, 82, 0.2);
+      --accent: #8b5e3c;
+      --accent-2: #b78a62;
+      --accent-soft: rgba(139, 94, 60, 0.1);
+      --shadow: 0 18px 50px rgba(56, 35, 16, 0.08);
+      --shadow-soft: 0 8px 30px rgba(56, 35, 16, 0.05);
+      --radius: 26px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(183, 138, 98, 0.12), transparent 26%),
+        radial-gradient(circle at 100% 15%, rgba(139, 94, 60, 0.10), transparent 22%),
+        linear-gradient(180deg, #f7f2eb 0%, #f2ece4 100%);
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.14), rgba(255,255,255,0.14)),
+        repeating-linear-gradient(90deg, transparent 0, transparent 96px, rgba(139, 94, 60, 0.025) 96px, rgba(139, 94, 60, 0.025) 97px);
+      opacity: 0.65;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(243, 239, 232, 0.74);
+      border-bottom: 1px solid rgba(125, 102, 82, 0.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 0.35rem 0.15rem;
+      position: relative;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .button,
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: none;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.95rem 1.25rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+    }
+
+    .button:hover,
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 14px 35px rgba(139, 94, 60, 0.24);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.45);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .section-card,
+    .testimonial,
+    .contact-card {
+      background: var(--paper);
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-copy {
+      padding: 2.7rem;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183,138,98,0.18), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.05;
+      margin: 0 0 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(2.9rem, 5vw, 5.4rem);
+      margin-top: 1rem;
+      max-width: 9ch;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 2.8vw, 3rem);
+    }
+
+    h3 {
+      font-size: 1.22rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 1.7rem;
+    }
+
+    .quick-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .quick-points div {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.45);
+      border: 1px solid var(--line);
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-self: start;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .stat {
+      padding: 1rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.52);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.04em;
+    }
+
+    section {
+      padding: 1.2rem 0 2.2rem;
+    }
+
+    #about,
+    #lessons,
+    #pricing,
+    #approach,
+    #reviews,
+    #faq,
+    #contact {
+      scroll-margin-top: 90px;
+    }
+
+    .section-card {
+      padding: 2.2rem;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.48);
+      border-radius: 999px;
+      padding: 0.6rem 0.95rem;
+      font-size: 0.93rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lesson-card,
+    .approach-card,
+    .faq-item,
+    .price-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.35rem;
+      background: rgba(255,255,255,0.48);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .testimonial-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .price-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .price {
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.05em;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 0.8rem;
+    }
+
+    .testimonial {
+      padding: 1.25rem;
+    }
+
+    .testimonial p {
+      margin-top: 0;
+    }
+
+    .quote-source {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-card {
+      padding: 2.2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .contact-item {
+      padding: 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.48);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.92);
+      font: inherit;
+      color: var(--ink);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 1rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .testimonial-wrap,
+      .pricing-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-points,
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero { padding-top: 3.5rem; }
+      .hero-copy,
+      .hero-card,
+      .section-card,
+      .contact-card { padding: 1.4rem; }
+      .quick-points,
+      .stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Ethan Rogers · German Lessons</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#approach">Approach</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Berlin & Online</span>
+          <h1>German lessons with depth, clarity, and real momentum.</h1>
+          <p class="lead">
+            I offer private and small-group German lessons for adult learners who want thoughtful teaching, strong explanation, and practical progress. My lessons combine linguistic knowledge, classroom experience, and a calm, tailored approach that helps you actually use German with confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Book a lesson</a>
+            <a class="button secondary" href="#reviews">Read reviews</a>
+          </div>
+          <div class="quick-points">
+            <div><strong>Private lessons</strong><br />Tailored to your level, pace, and goals.</div>
+            <div><strong>Small groups</strong><br />Interactive lessons with structure and warmth.</div>
+            <div><strong>Berlin & online</strong><br />Flexible formats for adult learners.</div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div>
+            <h2 style="font-size:1.55rem;">Why students choose me</h2>
+            <p class="small">A rare mix of academic depth, real classroom experience, and warm, high-quality instruction for serious adult learners.</p>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>4.7 / 5</strong>
+              <span>Public teaching rating</span>
+            </div>
+            <div class="stat">
+              <strong>9</strong>
+              <span>Student ratings online</span>
+            </div>
+            <div class="stat">
+              <strong>C1</strong>
+              <span>Goethe-Institut certificate</span>
+            </div>
+            <div class="stat">
+              <strong>101–202</strong>
+              <span>University German levels taught</span>
+            </div>
+          </div>
+          <div class="pill-list">
+            <span class="pill">Linguistics</span>
+            <span class="pill">German Studies</span>
+            <span class="pill">Spanish minor</span>
+            <span class="pill">M.A. in German Studies</span>
+            <span class="pill">Arizona teaching certification</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container section-card">
+        <div class="grid-2">
+          <div>
+            <span class="eyebrow">About me</span>
+            <h2>Experienced, thoughtful, and genuinely invested in how people learn.</h2>
+            <p>
+              I hold a double major bachelor’s degree in <strong>Linguistics</strong> and <strong>German Studies</strong>, a <strong>minor in Spanish</strong>, and a <strong>Master’s degree in German Studies</strong>. My graduate work included <strong>Arizona teaching certification</strong>, and I was recognized by the Dean of Humanities as an <strong>Outstanding Graduate Assistant in Teaching</strong>.
+            </p>
+            <p>
+              I have taught German at the university level from <strong>101 through 202</strong>, spent a semester teaching at the high school level, and have extensive experience with private instruction. During graduate school, I also taught <strong>intensive intermediate German</strong> for <strong>American university study abroad participants</strong> at the <strong>University of Leipzig</strong> for <strong>two summers in a row</strong>, where I worked closely with PhD students and professors.
+            </p>
+            <p>
+              I now teach adults in Berlin in both one-on-one and small-group settings, with lessons shaped by real learner goals, clear explanation, and a strong feel for how language works.
+            </p>
+          </div>
+          <div>
+            <div class="lesson-card">
+              <h3>Who my lessons are for</h3>
+              <p>
+                I work especially well with adult learners who want lessons that are intellectually solid, human, and adapted to real-life goals.
+              </p>
+              <div class="pill-list">
+                <span class="pill">Beginners to advanced learners</span>
+                <span class="pill">Expats in Berlin</span>
+                <span class="pill">Academic learners</span>
+                <span class="pill">Professionals</span>
+                <span class="pill">Conversation practice</span>
+                <span class="pill">Grammar support</span>
+                <span class="pill">Exam preparation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lessons">
+      <div class="container section-card">
+        <span class="eyebrow">Lesson formats</span>
+        <h2>Flexible formats for focused, high-quality learning.</h2>
+        <div class="grid-3">
+          <article class="lesson-card">
+            <h3>Private lessons</h3>
+            <p>
+              One-on-one sessions designed around your level, pace, and learning style. Ideal for focused progress, targeted grammar work, or speaking confidence.
+            </p>
+          </article>
+          <article class="lesson-card">
+            <h3>Small-group lessons</h3>
+            <p>
+              Structured, interactive learning for pairs or small groups. Great for friends, colleagues, or community-based learning with a social element.
+            </p>
+          </article>
+          <article class="lesson-card">
+            <h3>Online or in person</h3>
+            <p>
+              Lessons can take place in Berlin or online, depending on what works best for your schedule and energy.
+            </p>
+          </article>
+        </div>
+        <p class="small" style="margin-top:1rem;">
+          Rates are available on request and can vary depending on lesson format, frequency, and preparation needs.
+        </p>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container section-card">
+        <span class="eyebrow">Pricing</span>
+        <h2>Transparent pricing for serious, personalized instruction.</h2>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Individual lesson</h3>
+            <div class="price">€60</div>
+            <p>One 60-minute private lesson tailored to your level, goals, and pace.</p>
+          </article>
+          <article class="price-card">
+            <h3>5-lesson package</h3>
+            <div class="price">€275</div>
+            <p>Five 60-minute private lessons at a reduced rate for students who want continuity and steady progress.</p>
+            <p class="price-note">That comes to €55 per lesson.</p>
+          </article>
+          <article class="price-card">
+            <h3>Small groups</h3>
+            <div class="price">€40</div>
+            <p>Per person for groups of 2–3 students, for a 60-minute lesson with shared goals and interactive practice.</p>
+          </article>
+        </div>
+        <p class="small" style="margin-top:1rem;">
+          In-person lessons in Berlin and online lessons are both available. Contact me for scheduling and availability.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container section-card">
+        <span class="eyebrow">Teaching approach</span>
+        <h2>Clear structure, real language, and teaching that respects your intelligence.</h2>
+        <div class="grid-3">
+          <div class="approach-card">
+            <h3>Strong foundations</h3>
+            <p>
+              I explain grammar clearly, but always with the goal of helping you use it — not just memorize rules.
+            </p>
+          </div>
+          <div class="approach-card">
+            <h3>Active learning</h3>
+            <p>
+              My lessons are designed to keep you engaged through speaking, listening, pattern recognition, and meaningful practice.
+            </p>
+          </div>
+          <div class="approach-card">
+            <h3>Individual attention</h3>
+            <p>
+              I pay close attention to what blocks you, what motivates you, and how you actually learn best.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container section-card">
+        <span class="eyebrow">Student feedback</span>
+        <h2>What students have said publicly.</h2>
+        <div class="testimonial-wrap">
+          <article class="testimonial">
+            <p>“Very funny and patient… the variety of in-class activities made going to class fun.”</p>
+            <div class="quote-source">Public student review</div>
+          </article>
+          <article class="testimonial">
+            <p>“One of the most effective German instructors out there.”</p>
+            <div class="quote-source">Public student review</div>
+          </article>
+          <article class="testimonial">
+            <p>“A really fun teacher to have… approachable for questions and wants everyone who puts in the effort to succeed.”</p>
+            <div class="quote-source">Public student review</div>
+          </article>
+        </div>
+        <p class="small" style="margin-top: 1rem;">
+          You can also read more feedback on my public Rate My Professors page.
+        </p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container section-card">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions</h2>
+        <div class="grid-3">
+          <div class="faq-item">
+            <h3>Do you teach beginners?</h3>
+            <p>Yes. I teach across levels and adapt lessons to where you are starting.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can you help with conversation?</h3>
+            <p>Absolutely. We can focus on speaking, listening, confidence, and practical everyday German.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you offer group lessons?</h3>
+            <p>Yes. I currently teach small groups and can design a format that works well for shared goals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-card">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h2>Tell me what kind of German you want to build.</h2>
+            <p>
+              Tell me a little about your current level, your goals, and whether you’re looking for private or group lessons. I’ll get back to you about fit and availability.
+            </p>
+            <div class="contact-list">
+              <div class="contact-item"><strong>Email</strong><br />erogers6264@gmail.com</div>
+              <div class="contact-item"><strong>Location</strong><br />Berlin, Germany · Online lessons available</div>
+              <div class="contact-item"><strong>Languages</strong><br />English, German, Spanish</div>
+            </div>
+          </div>
+          <div>
+            <form onsubmit="handleSubmit(event)">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+              <select name="lessonType">
+                <option value="">Lesson type</option>
+                <option>Private lessons</option>
+                <option>Small-group lessons</option>
+                <option>Not sure yet</option>
+              </select>
+              <textarea name="message" placeholder="Tell me about your German level and what you’d like help with."></textarea>
+              <button type="submit" class="button primary">Prepare email inquiry</button>
+              <p class="form-note">This button opens your email app with a pre-filled message.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Ethan Rogers · German lessons in Berlin and online</p>
+      <p class="small">Designed for GitHub Pages. Clean, minimal, and easy to customize.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const lessonType = form.lessonType.value.trim();
+      const message = form.message.value.trim();
+
+      const subject = encodeURIComponent('German lesson inquiry from ' + name);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Lesson type: ' + (lessonType || 'Not specified') + '\n\n' +
+        'Message:\n' + (message || '')
+      );
+
+      window.location.href = 'mailto:erogers6264@gmail.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>
