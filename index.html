@@ -387,7 +387,7 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1.25rem;
       margin-top: 1.25rem;
     }
@@ -502,12 +502,17 @@
       font-size: 0.95rem;
     }
 
+    @media (max-width: 1100px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 900px) {
       .hero-grid,
       .grid-2,
       .grid-3,
       .testimonial-wrap,
-      .pricing-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -547,7 +552,8 @@
       }
 
       .quick-points,
-      .stats {
+      .stats,
+      .pricing-grid {
         grid-template-columns: 1fr;
       }
 
@@ -577,7 +583,7 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Berlin & Online</span>
-          <h1>You live in Berlin. You understand German. But speaking still feels hard.</h1>
+          <h1>You live in Berlin. You understand some German. Now it’s time to feel more confident speaking it.</h1>
           <p class="lead">
             I help adults in Berlin move past A2/B1 frustration with clear, structured German lessons focused on speaking, confidence, and real-life situations.
           </p>
@@ -685,7 +691,7 @@
         </div>
 
         <div class="cta-band">
-          <strong>Most of my students are not complete beginners.</strong><br />
+          <strong>Many of my students are not complete beginners, but beginners are very welcome too.</strong><br />
           They usually already understand a fair amount of German — they just do not feel comfortable using it yet.
         </div>
       </div>
@@ -829,6 +835,15 @@
               Five 60-minute private lessons at a reduced rate for students who want continuity and steady progress.
             </p>
             <p class="price-note">That comes to €55 per lesson.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>10-lesson package</h3>
+            <div class="price">€500</div>
+            <p>
+              Ten 60-minute private lessons for students who want a more committed rhythm and the best package rate.
+            </p>
+            <p class="price-note">That comes to €50 per lesson.</p>
           </article>
 
           <article class="price-card">
