@@ -387,9 +387,20 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.25rem;
       margin-top: 1.25rem;
+    }
+
+    .pricing-group-title {
+      margin: 2rem 0 0.35rem;
+      font-size: 1.35rem;
+      letter-spacing: -0.025em;
+    }
+
+    .pricing-group-intro {
+      margin: 0;
+      color: var(--muted);
     }
 
     .price-card {
@@ -821,6 +832,11 @@
         <span class="eyebrow">Pricing</span>
         <h2>Transparent pricing for thoughtful, personalized instruction.</h2>
 
+        <h3 class="pricing-group-title">Private lessons</h3>
+        <p class="pricing-group-intro">
+          Personalized 60-minute lessons, available in Berlin or online.
+        </p>
+
         <div class="pricing-grid">
           <article class="price-card">
             <h3>Individual lesson</h3>
@@ -845,16 +861,47 @@
             </p>
             <p class="price-note">That comes to €50 per lesson.</p>
           </article>
+        </div>
+
+        <h3 class="pricing-group-title">Small-group lessons</h3>
+        <p class="pricing-group-intro">
+          Interactive 60-minute lessons for students with a similar level and shared goals. All prices are per person.
+        </p>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>2 people</h3>
+            <div class="price">from €35</div>
+            <ul>
+              <li>Single lesson: <strong>€40</strong></li>
+              <li>5 lessons: <strong>€190</strong> (€38 each)</li>
+              <li>10 lessons: <strong>€350</strong> (€35 each)</li>
+            </ul>
+          </article>
 
           <article class="price-card">
-            <h3>Small groups</h3>
-            <div class="price">€40</div>
-            <p>Per person for groups of 2–3 students in a 60-minute lesson with shared goals and interactive practice.</p>
+            <h3>3 people</h3>
+            <div class="price">from €30</div>
+            <ul>
+              <li>Single lesson: <strong>€35</strong></li>
+              <li>5 lessons: <strong>€165</strong> (€33 each)</li>
+              <li>10 lessons: <strong>€300</strong> (€30 each)</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>4 people</h3>
+            <div class="price">from €25</div>
+            <ul>
+              <li>Single lesson: <strong>€30</strong></li>
+              <li>5 lessons: <strong>€140</strong> (€28 each)</li>
+              <li>10 lessons: <strong>€250</strong> (€25 each)</li>
+            </ul>
           </article>
         </div>
 
         <p class="small" style="margin-top:1rem;">
-          In-person lessons in Berlin and online lessons are both available.
+          Package prices are paid per person. In-person lessons in Berlin and online lessons are both available.
         </p>
 
         <div class="mid-cta">
